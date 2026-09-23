@@ -12,16 +12,29 @@ Each skill packages together the context, conventions, and occasionally scripts 
 
 ## Structure
 
-skill-name/
-├── SKILL.md # Required. Description, triggers, instructions
-├── scripts/ # Optional. Helper scripts the skill uses
-└── resources/ # Optional. Templates, reference docs, examples
+```
+skills/
+└── skill-name/
+    ├── SKILL.md    # Required. Description, triggers, instructions
+    ├── scripts/    # Optional. Helper scripts the skill uses
+    └── resources/  # Optional. Templates, reference docs, examples
+rules/              # Shared coding rules the skills expect to find in a project
+```
 
 ## Skills
 
 | Skill | Description |
 |---|---|
-| _(add rows as you go)_ | |
+| [implement-feature](skills/implement-feature/SKILL.md) | Plan and build a React feature step by step: clarify, pseudocode plan, confirm, implement, verify, changelog. |
+| [implement-feature-typescript](skills/implement-feature-typescript/SKILL.md) | Same as `implement-feature`, but new files are TypeScript in a partly-JS codebase. Legacy JS is never converted or typed. |
+| [test-feature](skills/test-feature/SKILL.md) | Write focused unit tests for a React feature with Vitest/Jest + React Testing Library. |
+| [pr-review](skills/pr-review/SKILL.md) | Advisory review of a PR's changed lines on GitHub, GitLab, or Bitbucket; posts inline comments and a summary. |
+
+## Rules
+
+| Rule | Description |
+|---|---|
+| [frontend-conventions](rules/frontend-conventions.md) | React code style, styling, accessibility, list keys, and paginated-list edge cases. Copy into a project's `.claude/rules/`. |
 
 ## Goals
 
@@ -31,7 +44,7 @@ skill-name/
 
 ## Usage
 
-Point your agent's skills directory (or equivalent config) at the relevant skill folder(s) in this repo, or copy the folder into your local skills path.
+Copy a skill folder into your agent's skills path — for Claude Code, `~/.claude/skills/` (all projects) or `<project>/.claude/skills/` (one project). Copy rule files into `<project>/.claude/rules/`.
 
 ## Contributing
 
